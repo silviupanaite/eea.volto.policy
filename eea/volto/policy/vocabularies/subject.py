@@ -51,7 +51,7 @@ safe_simplevocabulary_from_values = unsafe_simplevocabulary_from_values
 
 @implementer(IVocabularyFactory)
 class KeywordsVocabulary(object):
-    """Override Keywords vocabulary to provide the real Keyword as the token."""
+    """Override Keywords vocabulary to provide the real Keyword as the token"""
 
     # Allow users to customize the index to easily create
     # KeywordVocabularies for other keyword indexes
@@ -84,9 +84,9 @@ class KeywordsVocabulary(object):
         tags_idx = cat.indexes[self.keyword_index]
         result = []
         # query all oids of path - low level
-        pquery = {
-            self.path_index: {"query": "/".join(section.getPhysicalPath()), "depth": -1}
-        }
+        pquery = \
+            {self.path_index: {'query': '/'.join(section.getPhysicalPath()),
+             'depth': -1}}
         kwfilter = safe_encode(kwfilter)
         # uses internal zcatalog specific details to quickly get the values.
         path_result, info = path_idx._apply_index(pquery)

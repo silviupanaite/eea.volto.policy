@@ -16,7 +16,8 @@ def construct_url(self, randomstring):
         # without triggering possible "record not found"
         # Default value for volto.frontend_domain is http://localhost:3000
 
-        # to consider: maybe we should/could override @@portal_state/navigation_root_url() for
+        # to consider: maybe we should/could override
+        # @@portal_state/navigation_root_url() for
         # IAPIRequest to fix this on a higher level
 
         registry = getUtility(IRegistry)
