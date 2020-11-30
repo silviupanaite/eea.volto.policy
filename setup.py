@@ -38,6 +38,11 @@ setup(
         python_requires="==2.7",
         install_requires=[
         'setuptools',
+        "plone.api",
+        "Products.GenericSetup>=1.8.2",
+        "z3c.jbot",
+        "plone.restapi",
+        "collective.folderishtypes[dexterity]",
         # -*- Extra requirements: -*-
     ],
     extras_require={

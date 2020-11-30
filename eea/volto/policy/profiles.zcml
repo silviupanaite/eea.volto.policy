@@ -29,5 +29,22 @@
       name="eea.volto.policy-hiddenprofiles"
       />
 
+<!--
+  <genericsetup:registerProfile
+      name="default-homepage"
+      title="kitconcept.volto site (Default content on homepage)"
+      directory="profiles/homepage"
+      description="Creates a default page for the site"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.create_default_homepage"
+      />
+
+  <genericsetup:registerProfile
+      name="richtext"
+      title="kitconcept.volto p51 profile"
+      directory="profiles/richtext"
+      description="Specific profile for re-adding the richtext behavior"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      /> -->
 
 </configure>
