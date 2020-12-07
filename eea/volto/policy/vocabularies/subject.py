@@ -2,7 +2,6 @@
 # pylint: disable = W0612
 from BTrees.IIBTree import intersection
 from plone.app.layout.navigation.root import getNavigationRootObject
-from plone.app.vocabularies.terms import safe_encode
 from plone.registry.interfaces import IRegistry
 from Products.CMFCore.utils import getToolByName
 from zope.component import queryUtility
@@ -13,6 +12,18 @@ from zope.schema.interfaces import ITokenizedTerm
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary
 from zope.site.hooks import getSite
+
+try:
+    # Plone 5
+    from plone.app.vocabularies.terms import safe_encode
+except ImportError:
+    # Plone 4
+    def safe_encode(term):
+        if isinstance(term, unicode):
+            # no need to use portal encoding for transitional encoding from
+            # unicode to ascii. utf-8 should be fine.
+            term = term.encode('utf-8')
+        return term
 
 
 @implementer(ITokenizedTerm)

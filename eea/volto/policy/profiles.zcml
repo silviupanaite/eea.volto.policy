@@ -8,8 +8,19 @@
 
   <genericsetup:registerProfile
       name="default"
+      zcml:condition="have plone-5"
       title="eea.volto.policy"
       directory="profiles/default"
+      description="Installs the eea.volto.policy add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="default"
+      zcml:condition="not-have plone-5"
+      title="eea.volto.policy"
+      directory="profiles/plone4"
       description="Installs the eea.volto.policy add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.post_install"
