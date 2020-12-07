@@ -79,7 +79,7 @@ def create_root_homepage(portal, default_home=None):
                                 {"length": 10, "offset": 0, "style": "BOLD"}
                             ],
                             "key": "6470b",
-                            "text": "Disclaimer: This instance is reset every night, so all changes will be lost afterwards.", # noqa
+                            "text": "Disclaimer: This instance is reset every night, so all changes will be lost afterwards.",  # noqa
                             "type": "unstyled",
                         }
                     ],
@@ -118,7 +118,7 @@ def create_root_homepage(portal, default_home=None):
                             ],
                             "inlineStyleRanges": [],
                             "key": "behki",
-                            "text": "Plone is a CMS built on Python with over 19 years of experience. Plone has very interesting features that appeal to developers and users alike, such as customizable content types, hierarchical URL object traversing and a sophisticated content workflow powered by a granular permissions model. This allows you to build anything from simple websites to enterprise-grade intranets. Volto exposes all these features and communicates with Plone via its mature REST API. Volto can be esily themed and is highly customizable.", # noqa
+                            "text": "Plone is a CMS built on Python with over 19 years of experience. Plone has very interesting features that appeal to developers and users alike, such as customizable content types, hierarchical URL object traversing and a sophisticated content workflow powered by a granular permissions model. This allows you to build anything from simple websites to enterprise-grade intranets. Volto exposes all these features and communicates with Plone via its mature REST API. Volto can be esily themed and is highly customizable.",  # noqa
                             "type": "unstyled",
                         }
                     ],
@@ -134,8 +134,8 @@ def create_root_homepage(portal, default_home=None):
                         },
                         "1": {
                             "data": {
-                                "href": "https://github.com/plone/plone.restapi",
-                                "url": "https://github.com/plone/plone.restapi",
+                                "href": "https://github.com/plone/plone.restapi",  # noqa
+                                "url": "https://github.com/plone/plone.restapi",   # noqa
                             },
                             "mutability": "MUTABLE",
                             "type": "LINK",
@@ -184,18 +184,18 @@ def create_root_homepage(portal, default_home=None):
                         {
                             "data": {},
                             "depth": 0,
-                            "entityRanges": [{"key": 0, "length": 36, "offset": 39}],
+                            "entityRanges": [{"key": 0, "length": 36, "offset": 39}],  # noqa
                             "inlineStyleRanges": [],
                             "key": "6a248",
-                            "text": "Last but not least, it also supports a Volto Nodejs-based backend reference API implementation that demos how other systems could also use Volto to display and create content through it.",
+                            "text": "Last but not least, it also supports a Volto Nodejs-based backend reference API implementation that demos how other systems could also use Volto to display and create content through it.",  # noqa
                             "type": "unstyled",
                         }
                     ],
                     "entityMap": {
                         "0": {
                             "data": {
-                                "href": "https://github.com/plone/volto-reference-backend",
-                                "url": "https://github.com/plone/volto-reference-backend",
+                                "href": "https://github.com/plone/volto-reference-backend",  # noqa
+                                "url": "https://github.com/plone/volto-reference-backend",   # noqa
                             },
                             "mutability": "MUTABLE",
                             "type": "LINK",
@@ -215,7 +215,7 @@ def create_root_homepage(portal, default_home=None):
                                 {"length": 12, "offset": 51, "style": "BOLD"}
                             ],
                             "key": "94arl",
-                            "text": "You can log in and use it as admin user using these credentials:",
+                            "text": "You can log in and use it as admin user using these credentials:",  # noqa
                             "type": "unstyled",
                         }
                     ],
@@ -229,10 +229,10 @@ def create_root_homepage(portal, default_home=None):
                         {
                             "data": {},
                             "depth": 0,
-                            "entityRanges": [{"key": 0, "length": 5, "offset": 0}],
+                            "entityRanges": [{"key": 0, "length": 5, "offset": 0}],  # noqa
                             "inlineStyleRanges": [],
                             "key": "1bnna",
-                            "text": "Volto is a React-based frontend for content management systems, currently supporting three backend implementations: Plone, Guillotina and a NodeJS reference implementation.",
+                            "text": "Volto is a React-based frontend for content management systems, currently supporting three backend implementations: Plone, Guillotina and a NodeJS reference implementation.",  # noqa
                             "type": "unstyled",
                         }
                     ],
@@ -258,7 +258,7 @@ def create_root_homepage(portal, default_home=None):
                             "entityRanges": [],
                             "inlineStyleRanges": [],
                             "key": "55n44",
-                            "text": "You can use this site to test Volto. It runs on the master branch of Volto using latest Plone 5.2 Backend running on Python 3.",
+                            "text": "You can use this site to test Volto. It runs on the master branch of Volto using latest Plone 5.2 Backend running on Python 3.",  # noqa
                             "type": "unstyled",
                         }
                     ],
@@ -308,10 +308,10 @@ def create_root_homepage(portal, default_home=None):
                         {
                             "data": {},
                             "depth": 0,
-                            "entityRanges": [{"key": 0, "length": 10, "offset": 36}],
+                            "entityRanges": [{"key": 0, "length": 10, "offset": 36}],  # noqa
                             "inlineStyleRanges": [],
                             "key": "68rve",
-                            "text": "Volto also supports other APIs like Guillotina, a Python resource management system, inspired by Plone and using the same basic concepts like traversal, content types and permissions model.",
+                            "text": "Volto also supports other APIs like Guillotina, a Python resource management system, inspired by Plone and using the same basic concepts like traversal, content types and permissions model.",  # noqa
                             "type": "unstyled",
                         }
                     ],
