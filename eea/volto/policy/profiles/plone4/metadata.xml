@@ -6,6 +6,3 @@
     <dependency>profile-plone.restapi:blocks</dependency>
   </dependencies>
 </metadata>
-
-
-PIN plone.app.contenttypes = 1.1.9
