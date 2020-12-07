@@ -1,3 +1,5 @@
+""" Nav Title behavior
+"""
 # -*- coding: utf-8 -*-
 from eea.volto.policy import EEAMessageFactory as _
 from plone.autoform.interfaces import IFormFieldProvider
@@ -8,5 +10,5 @@ from zope.schema import TextLine
 
 @provider(IFormFieldProvider)
 class INavTitle(model.Schema):
-
+    """ INavTitle """
     nav_title = TextLine(title=_(u"Navigation title"), required=False)

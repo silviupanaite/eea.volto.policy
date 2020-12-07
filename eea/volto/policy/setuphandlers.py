@@ -1,12 +1,12 @@
 """ Custom setup
 """
-# pylint: disable = E501
+# pylint: disable = C0301
+import json
+import logging
+
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 from plone import api
-
-import json
-import logging
 
 logger = logging.getLogger("eea.volto.policy")
 
@@ -79,7 +79,7 @@ def create_root_homepage(portal, default_home=None):
                                 {"length": 10, "offset": 0, "style": "BOLD"}
                             ],
                             "key": "6470b",
-                            "text": "Disclaimer: This instance is reset every night, so all changes will be lost afterwards.",
+                            "text": "Disclaimer: This instance is reset every night, so all changes will be lost afterwards.", # noqa
                             "type": "unstyled",
                         }
                     ],
@@ -118,7 +118,7 @@ def create_root_homepage(portal, default_home=None):
                             ],
                             "inlineStyleRanges": [],
                             "key": "behki",
-                            "text": "Plone is a CMS built on Python with over 19 years of experience. Plone has very interesting features that appeal to developers and users alike, such as customizable content types, hierarchical URL object traversing and a sophisticated content workflow powered by a granular permissions model. This allows you to build anything from simple websites to enterprise-grade intranets. Volto exposes all these features and communicates with Plone via its mature REST API. Volto can be esily themed and is highly customizable.",
+                            "text": "Plone is a CMS built on Python with over 19 years of experience. Plone has very interesting features that appeal to developers and users alike, such as customizable content types, hierarchical URL object traversing and a sophisticated content workflow powered by a granular permissions model. This allows you to build anything from simple websites to enterprise-grade intranets. Volto exposes all these features and communicates with Plone via its mature REST API. Volto can be esily themed and is highly customizable.", # noqa
                             "type": "unstyled",
                         }
                     ],

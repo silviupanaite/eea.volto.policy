@@ -1,3 +1,5 @@
+""" Patches
+"""
 from eea.volto.policy.interfaces import IVoltoSettings
 from plone.registry.interfaces import IRegistry
 from plone.rest.interfaces import IAPIRequest
