@@ -1,5 +1,6 @@
 """ Custom setup
 """
+# pylint: disable = E501
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 from plone import api
