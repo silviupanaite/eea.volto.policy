@@ -1,4 +1,5 @@
 # pylint: disable = C0111
+# pylint: disable = C0412
 # pylint: disable = W0612
 from BTrees.IIBTree import intersection
 from plone.app.layout.navigation.root import getNavigationRootObject
