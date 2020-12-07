@@ -18,6 +18,7 @@
       />
 
   <genericsetup:registerProfile
+      zcml:condition="not-have plone-5"
       name="default"
       title="eea.volto.policy"
       directory="profiles/plone4"
