@@ -8,8 +8,8 @@
   <five:registerPackage package="." initialize=".initialize" />
 
   <genericsetup:registerProfile
-      name="default"
       zcml:condition="have plone-5"
+      name="default"
       title="eea.volto.policy"
       directory="profiles/default"
       description="Installs the eea.volto.policy add-on."
@@ -19,7 +19,6 @@
 
   <genericsetup:registerProfile
       name="default"
-      zcml:condition="not-have plone-5"
       title="eea.volto.policy"
       directory="profiles/plone4"
       description="Installs the eea.volto.policy add-on."
@@ -40,23 +39,5 @@
       factory=".setuphandlers.HiddenProfiles"
       name="eea.volto.policy-hiddenprofiles"
       />
-
-<!--
-  <genericsetup:registerProfile
-      name="default-homepage"
-      title="kitconcept.volto site (Default content on homepage)"
-      directory="profiles/homepage"
-      description="Creates a default page for the site"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.create_default_homepage"
-      />
-
-  <genericsetup:registerProfile
-      name="richtext"
-      title="kitconcept.volto p51 profile"
-      directory="profiles/richtext"
-      description="Specific profile for re-adding the richtext behavior"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      /> -->
 
 </configure>
