@@ -1,3 +1,4 @@
+# pylint: disable = C0412
 """ Base test cases
 """
 from Products.CMFPlone import setuphandlers
