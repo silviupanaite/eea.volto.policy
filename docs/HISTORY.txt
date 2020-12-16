@@ -1,9 +1,10 @@
 Changelog
 =========
 
-1.0 - (2020-12-08)
+1.1 - (2020-12-16)
 ---------------------------
-* Change: Merge #121942 [Petchesi-Iulian]
+* Change: Fix history.txt
+  [@iulianpethesi refs #121942]
 
 1.0 - (2020-12-08)
 -----------------------
