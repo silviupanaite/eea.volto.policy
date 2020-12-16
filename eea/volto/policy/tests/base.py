@@ -1,3 +1,4 @@
+# pylint: disable = C0412
 """ Base test cases
 """
 from Products.CMFPlone import setuphandlers
@@ -9,6 +10,16 @@ from plone.app.testing import FunctionalTesting
 from plone.app.testing import setRoles
 
 
+try:
+    # Plone 4
+    from Products.CMFPlone.interfaces import IFactoryTool
+    assert IFactoryTool
+    IS_PLONE_4 = True
+except ImportError:
+    IS_PLONE_4 = False
+
+
+
 class EEAFixture(PloneSandboxLayer):
     """ EEA Testing Policy
     """
@@ -18,6 +29,11 @@ class EEAFixture(PloneSandboxLayer):
         import eea.volto.policy
         self.loadZCML(package=eea.volto.policy)
         z2.installProduct(app, 'eea.volto.policy')
+
+        # Plone 4
+        if IS_PLONE_4:
+            z2.installProduct(app, 'Products.DateRecurringIndex')
+
 
     def setUpPloneSite(self, portal):
         """ Setup Plone
@@ -46,6 +62,11 @@ class EEAFixture(PloneSandboxLayer):
         """ Uninstall Zope
         """
         z2.uninstallProduct(app, 'eea.volto.policy')
+
+        # Plone 4
+        if IS_PLONE_4:
+            z2.uninstallProduct(app, 'Products.DateRecurringIndex')
+
 
 EEAFIXTURE = EEAFixture()
 FUNCTIONAL_TESTING = FunctionalTesting(bases=(EEAFIXTURE,),

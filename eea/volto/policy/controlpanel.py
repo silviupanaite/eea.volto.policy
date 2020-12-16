@@ -1,4 +1,6 @@
 # -*- coding: UTF-8 -*-
+# pylint: disable = C0111
+# pylint: disable = W0235
 from eea.volto.policy.interfaces import IVoltoSettings
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
