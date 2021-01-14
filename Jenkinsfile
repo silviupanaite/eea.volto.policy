@@ -122,7 +122,8 @@ pipeline {
           "Plone5 & Python3": {
             node(label: 'docker') {
               sh '''docker run -i --rm --name="$BUILD_TAG-plone5" -e GIT_BRANCH="$BRANCH_NAME" -e ADDONS="$GIT_NAME" -e DEVELOP="src/$GIT_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" eeacms/plone-test:5-python3 -v -vv -s $GIT_NAME'''
-            },
+            }
+          },  
 
           "PloneSaaS": {
             node(label: 'docker') {
