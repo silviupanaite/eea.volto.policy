@@ -43,11 +43,7 @@ setup(
     zip_safe=False,
         install_requires=[
         'setuptools',
-        "plone.api",
-        "Products.GenericSetup>=1.8.2",
-        "z3c.jbot",
-        "plone.restapi",
-        "collective.folderishtypes[dexterity]",
+        "plone.volto",
         # -*- Extra requirements: -*-
     ],
     extras_require={

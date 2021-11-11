@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.5 - (2021-11-11)
+---------------------------
+* Change: Removed z3c.jbot as dependency
+  [iulianpetchesi refs #139888]
+
 1.4 - (2021-11-11)
 ---------------------------
 * Change: New release
