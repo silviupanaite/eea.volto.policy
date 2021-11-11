@@ -43,9 +43,6 @@ setup(
     zip_safe=False,
         install_requires=[
         'setuptools',
-        "plone.api",
-        "Products.GenericSetup>=1.8.2",
-        "plone.restapi",
         "plone.volto",
         # -*- Extra requirements: -*-
     ],
