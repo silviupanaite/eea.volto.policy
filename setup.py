@@ -46,7 +46,7 @@ setup(
         "plone.api",
         "Products.GenericSetup>=1.8.2",
         "plone.restapi",
-        "collective.folderishtypes[dexterity]",
+        "plone.volto",
         # -*- Extra requirements: -*-
     ],
     extras_require={
