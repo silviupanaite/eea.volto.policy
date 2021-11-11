@@ -3,11 +3,5 @@
   xmlns:plone="http://namespaces.plone.org/plone"
   i18n_domain="eea">
 
-  <plone:behavior
-      name="volto.navtitle"
-      title="Navigation title"
-      description="Navigation title used in sections, menus and doormats"
-      provides=".navtitle.INavTitle"
-    />
 
 </configure>

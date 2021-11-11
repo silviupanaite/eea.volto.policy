@@ -15,15 +15,4 @@
   <include package=".vocabularies" />
   <include package=".upgrades" />
 
-  <browser:page
-      name="volto_settings"
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      class=".controlpanel.VoltoSettingsControlPanel"
-      permission="cmf.ManagePortal"
-      />
-
-  <adapter
-    factory=".controlpanel.VoltoControlpanel"
-    name="volto-settings" />
-
 </configure>
