@@ -9,8 +9,6 @@
   <include file="patches.zcml" />
   <include file="profiles.zcml" />
 
-  <includeDependencies package="." />
-
   <include package=".behaviors" />
   <include package=".vocabularies" />
   <include package=".upgrades" />
