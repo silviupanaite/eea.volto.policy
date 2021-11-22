@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.6 - (2021-11-22)
+---------------------------
+* Change: Drop includeDependencies="." in order to work with pip based installation
+  [avoinea refs #139557]
+
 1.5 - (2021-11-11)
 ---------------------------
 * Change: Removed z3c.jbot as dependency
