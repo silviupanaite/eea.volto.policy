@@ -3,6 +3,8 @@ Changelog
 
 1.7-dev0 - (unreleased)
 ---------------------------
+* Change: Removed types already present in plone.volto
+  [iulianpetchesi refs #139888]
 
 1.6 - (2021-11-22)
 ---------------------------
