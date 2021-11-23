@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.7 - (2021-11-23)
+---------------------------
+* Change: Removed types already present in plone.volto
+  [iulianpetchesi refs #139888]
+
 1.6 - (2021-11-22)
 ---------------------------
 * Change: Drop includeDependencies="." in order to work with pip based installation
