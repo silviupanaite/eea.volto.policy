@@ -7,11 +7,10 @@
   <i18n:registerTranslations directory="locales" />
 
   <include package="plone.volto" />
-
-  <include file="patches.zcml" />
   <include file="profiles.zcml" />
 
   <include package=".behaviors" />
+  <include package=".restapi" />
   <include package=".vocabularies" />
   <include package=".upgrades" />
 
