@@ -1,6 +1,13 @@
 Changelog
 =========
 
+2.0 - (2023-04-10)
+---------------------------
+* Bug fix: RestAPI fix DateTime timezone for publication fields serializer/deserializer
+  [avoinea refs #250368]
+* Cleanup: Drop Python2/Plone4 support
+  [avoinea refs #250368]
+
 1.7 - (2021-11-23)
 ---------------------------
 * Change: Removed types already present in plone.volto
