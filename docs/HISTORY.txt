@@ -1,8 +1,10 @@
 Changelog
 =========
 
-2.1-dev0 - (unreleased)
+2.1 - (2023-04-11)
 ---------------------------
+* Bug fix: RestAPI fix DateTime timezone for ICoreMetadata fields serializer/deserializer
+  [avoinea refs #250368]
 
 2.0 - (2023-04-10)
 ---------------------------
