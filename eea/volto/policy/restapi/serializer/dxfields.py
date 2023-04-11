@@ -1,6 +1,5 @@
 """ DXFields
 """
-from eea.volto.policy.interfaces import IEeaVoltoPolicyLayer
 from plone.app.dexterity.behaviors.metadata import IPublication
 from plone.dexterity.interfaces import IDexterityContent
 from plone.restapi.interfaces import IFieldSerializer
@@ -8,6 +7,13 @@ from plone.restapi.serializer.dxfields import DefaultFieldSerializer
 from zope.component import adapter
 from zope.interface import implementer
 from zope.schema.interfaces import IDatetime
+
+from eea.volto.policy.interfaces import IEeaVoltoPolicyLayer
+try:
+    from eea.coremetadata.metadata import ICoreMetadata
+except ImportError:
+    # Fallback
+    ICoreMetadata = IPublication
 
 
 @adapter(IDatetime, IDexterityContent, IEeaVoltoPolicyLayer)
@@ -21,7 +27,7 @@ class DateTimeFieldSerializer(DefaultFieldSerializer):
         value = getattr(
             self.field.interface(self.context), self.field.__name__, default
         )
-        if value and self.field.interface == IPublication:
+        if value and self.field.interface in (IPublication, ICoreMetadata,):
             # the patch: we want the dates with full tz infos
             # default value is taken from
             # plone.app.dexterity.behaviors.metadata.Publication that escape
