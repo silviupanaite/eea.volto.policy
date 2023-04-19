@@ -3,6 +3,8 @@ Changelog
 
 2.2-dev0 - (unreleased)
 ---------------------------
+* Bug fix: restore IVoltoSettings interface
+  [alecghica refs #250564]
 
 2.1 - (2023-04-11)
 ---------------------------
