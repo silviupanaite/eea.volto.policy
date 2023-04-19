@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.2 - (2023-04-19)
+---------------------------
+* Bug fix: restore IVoltoSettings interface
+  [alecghica refs #250564]
+
 2.1 - (2023-04-11)
 ---------------------------
 * Bug fix: RestAPI fix DateTime timezone for ICoreMetadata fields serializer/deserializer
