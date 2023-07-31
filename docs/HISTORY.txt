@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.3 - (2023-07-31)
+---------------------------
+* Docs: Update sonarqube tags
+  [valipod]
+
 2.2 - (2023-04-19)
 ---------------------------
 * Bug fix: restore IVoltoSettings interface
