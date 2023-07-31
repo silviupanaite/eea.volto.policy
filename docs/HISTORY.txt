@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.3-dev0 - (unreleased)
+2.3 - (2023-07-31)
 ---------------------------
 * Docs: Update sonarqube tags
   [valipod]
