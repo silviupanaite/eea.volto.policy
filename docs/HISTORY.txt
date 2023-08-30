@@ -1,8 +1,11 @@
 Changelog
 =========
 
+3.0-dev0 - (unreleased)
 2.4-dev0 - (unreleased)
 ---------------------------
+* Feature: Add image_scales to catalog and update list of scales to registry
+  [nileshgulia1 - refs #254889]
 
 2.3 - (2023-07-31)
 ---------------------------

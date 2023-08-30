@@ -27,4 +27,16 @@
 
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+    source="2.0"
+    destination="3.0"
+    profile="eea.volto.policy:default">
+
+    <genericsetup:upgradeDepends
+      title="Add image_scales to catalog and update list of scales to registry"
+      import_steps="catalog plone.app.registry"
+      />
+
+  </genericsetup:upgradeSteps>
+
 </configure>
