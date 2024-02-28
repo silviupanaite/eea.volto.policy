@@ -16,21 +16,6 @@ from zope.interface import Interface, implementer
 class Navigation(BaseNavigation):
     """Navigation adapter"""
 
-    def __call__(self, expand=False):
-        if self.request.form.get("expand.navigation.depth", False):
-            self.depth = int(self.request.form["expand.navigation.depth"])
-        else:
-            self.depth = 1
-
-        result = {
-            "navigation": {"@id": self.context.absolute_url() + "/@navigation"}
-        }
-        if not expand:
-            return result
-
-        result["navigation"]["items"] = self.build_tree(self.navtree_path)
-        return result
-
     def customize_entry(self, entry, brain):
         """append custom entries"""
         entry["brain"] = brain

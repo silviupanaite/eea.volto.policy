@@ -1,20 +1,6 @@
-<configure xmlns="http://namespaces.zope.org/zope" xmlns:plone="http://namespaces.plone.org/plone">
+<configure xmlns="http://namespaces.zope.org/zope">
   <include package="plone.restapi" />
   <include package=".deserializer" />
   <include package=".serializer" />
-
-  <adapter
-    factory=".navigation.Navigation"
-    name="navigation"
-    />
-
-  <plone:service
-    method="GET"
-    factory=".navigation.NavigationGet"
-    for="zope.interface.Interface"
-    permission="zope2.View"
-    name="@navigation"
-    layer="plone.restapi.interfaces.IPloneRestapiLayer"
-    />
-
+  <include package=".navigation" />
 </configure>
