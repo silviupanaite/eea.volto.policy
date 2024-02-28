@@ -7,6 +7,7 @@ from plone.restapi.services.navigation.get import Navigation as BaseNavigation
 from plone.restapi.services.navigation.get import (
     NavigationGet as BaseNavigationGet,
 )
+from Products.CMFCore.utils import getToolByName
 from zope.component import adapter
 from zope.interface import Interface, implementer
 
@@ -21,7 +22,9 @@ class Navigation(BaseNavigation):
         entry["brain"] = brain
         if hasattr(brain, "getRemoteUrl") and brain.getRemoteUrl:
             entry["path"] = urlparse(brain.getRemoteUrl).path
-            entry["@id"] = brain.getRemoteUrl
+            pm = getToolByName(self.context, "portal_membership")
+            if bool(pm.isAnonymousUser()):
+                entry["@id"] = brain.getRemoteUrl
 
         return entry
 
