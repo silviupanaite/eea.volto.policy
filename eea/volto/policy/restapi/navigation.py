@@ -1,9 +1,12 @@
+""" Navigation
+"""
+
+from urllib.parse import urlparse
 from plone.restapi.interfaces import IExpandableElement, IPloneRestapiLayer
 from plone.restapi.services.navigation.get import Navigation as BaseNavigation
 from plone.restapi.services.navigation.get import (
     NavigationGet as BaseNavigationGet,
 )
-from urllib.parse import urlparse
 from zope.component import adapter
 from zope.interface import Interface, implementer
 
@@ -11,6 +14,8 @@ from zope.interface import Interface, implementer
 @implementer(IExpandableElement)
 @adapter(Interface, IPloneRestapiLayer)
 class Navigation(BaseNavigation):
+    """Navigation adapter"""
+
     def __call__(self, expand=False):
         if self.request.form.get("expand.navigation.depth", False):
             self.depth = int(self.request.form["expand.navigation.depth"])
@@ -27,6 +32,7 @@ class Navigation(BaseNavigation):
         return result
 
     def customize_entry(self, entry, brain):
+        """append custom entries"""
         entry["brain"] = brain
         if hasattr(brain, "getRemoteUrl") and brain.getRemoteUrl:
             entry["path"] = urlparse(brain.getRemoteUrl).path
@@ -35,6 +41,7 @@ class Navigation(BaseNavigation):
         return entry
 
     def render_item(self, item, path):
+        """build navtree from item helper"""
         sub = self.build_tree(item["path"], first_run=False)
 
         item.update({"items": sub})
@@ -49,6 +56,9 @@ class Navigation(BaseNavigation):
 
 
 class NavigationGet(BaseNavigationGet):
+    """Navigation get service"""
+
     def reply(self):
+        """reply"""
         navigation = Navigation(self.context, self.request)
         return navigation(expand=True)["navigation"]
