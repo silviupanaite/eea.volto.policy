@@ -1,6 +1,11 @@
 Changelog
 =========
 
+3.4 - (2024-03-28)
+---------------------------
+* Change: Develop typo
+  [alecghica]
+
 3.3 - (2024-03-28)
 ---------------------------
 * Bug fix: fixed the ZMI styles
