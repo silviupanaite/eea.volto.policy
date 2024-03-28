@@ -1,7 +1,7 @@
 Changelog
 =========
 
-3.3-dev0 - (unreleased)
+3.3 - (2024-03-28)
 ---------------------------
 * Bug fix: fixed the ZMI styles
   [alecghica refs #267310]
