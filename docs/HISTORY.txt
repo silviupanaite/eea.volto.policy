@@ -1,8 +1,10 @@
 Changelog
 =========
 
-3.5-dev0 - (unreleased)
+3.5 - (2024-05-14)
 ---------------------------
+* Change: feat(serializer): added effective to the default_metadata_fields
+  [ichim-david]
 
 3.4 - (2024-03-28)
 ---------------------------
