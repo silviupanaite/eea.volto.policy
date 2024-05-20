@@ -1,6 +1,9 @@
 Changelog
 =========
 
+4.1-dev0 - (unreleased)
+---------------------------
+
 4.0 - (2024-05-20)
 ---------------------------
 * Feature: Migrate teaserGrid to gridBlock structure from Volto 17 core
