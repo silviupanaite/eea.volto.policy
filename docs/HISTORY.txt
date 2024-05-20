@@ -1,6 +1,11 @@
 Changelog
 =========
 
+4.0 - (2024-05-20)
+---------------------------
+* Feature: Migrate teaserGrid to gridBlock structure from Volto 17 core
+  [avoinea - refs #265726]
+
 3.5 - (2024-05-14)
 ---------------------------
 * Change: feat(serializer): added effective to the default_metadata_fields
