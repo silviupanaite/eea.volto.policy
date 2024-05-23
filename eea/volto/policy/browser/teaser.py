@@ -93,7 +93,7 @@ class TeaserMigrateSite(TeaserMigrateContent):
             if view.migrate():
                 count += 1
             if idx % 100 == 0:
-                transaction.savepoint(optimistic=True)
+                transaction.commit()
                 logger.info("Progress %s of %s. Migrated %s",
                             idx, total, count)
         return count

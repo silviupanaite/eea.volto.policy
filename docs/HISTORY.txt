@@ -1,6 +1,11 @@
 Changelog
 =========
 
+4.1 - (2024-05-23)
+---------------------------
+* Bug fix: Fix teaserGrid to gridBlock to transaction.commit every 100 items
+  [avoinea - refs #265726]
+
 4.0 - (2024-05-20)
 ---------------------------
 * Feature: Migrate teaserGrid to gridBlock structure from Volto 17 core
