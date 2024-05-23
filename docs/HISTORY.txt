@@ -3,6 +3,8 @@ Changelog
 
 4.1-dev0 - (unreleased)
 ---------------------------
+* Bug fix: Fix teaserGrid to gridBlock to transaction.commit every 100 items
+  [avoinea - refs #265726]
 
 4.0 - (2024-05-20)
 ---------------------------
