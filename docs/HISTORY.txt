@@ -1,8 +1,10 @@
 Changelog
 =========
 
-5.5-dev0 - (unreleased)
+5.5 - (2024-10-18)
 ---------------------------
+* Change: Fix broken brain error at the upgrade svg step - refs #276995
+  [avoinea]
 
 5.4 - (2024-10-09)
 ---------------------------
