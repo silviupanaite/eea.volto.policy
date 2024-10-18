@@ -1,6 +1,9 @@
 Changelog
 =========
 
+5.6-dev0 - (unreleased)
+---------------------------
+
 5.5 - (2024-10-18)
 ---------------------------
 * Change: Fix broken brain error at the upgrade svg step - refs #276995
