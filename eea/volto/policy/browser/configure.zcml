@@ -27,4 +27,13 @@
     permission="cmf.ManagePortal"
     />
 
+  <browser:page
+      name="breadcrumbs_view"
+      for="*"
+      class=".breadcrumbs.PhysicalNavigationBreadcrumbs"
+      allowed_attributes="breadcrumbs"
+      permission="zope.Public"
+      layer="eea.volto.policy.interfaces.IEeaVoltoPolicyLayer"
+      />
+
 </configure>
