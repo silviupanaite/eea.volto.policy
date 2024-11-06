@@ -23,14 +23,14 @@ class EEABreadcrumbs(Breadcrumbs):
             (self.context, self.request), name="plone_portal_state"
         )
         breadcrumbs_view = getMultiAdapter(
-            (self.context, self.request), name="breadcrumbs_view"
+            (self.context, self.request), name="eea_breadcrumbs_view"
         )
         items = []
         # EEA add portal_type info to breadcrumbs
         for crumb in breadcrumbs_view.breadcrumbs():
             item = {
                 "title": crumb["Title"],
-                "portal_type": crumb['portal_type'],
+                "portal_type": crumb.get("portal_type", ""),
                 "@id": crumb["absolute_url"],
             }
             if crumb.get("nav_title", False):

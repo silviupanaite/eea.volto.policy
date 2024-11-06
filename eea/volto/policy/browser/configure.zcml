@@ -28,7 +28,7 @@
     />
 
   <browser:page
-      name="breadcrumbs_view"
+      name="eea_breadcrumbs_view"
       for="*"
       class=".breadcrumbs.PhysicalNavigationBreadcrumbs"
       allowed_attributes="breadcrumbs"
