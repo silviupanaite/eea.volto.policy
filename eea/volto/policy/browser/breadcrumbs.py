@@ -1,4 +1,5 @@
-""" Breadcrumbs """
+"""Breadcrumbs"""
+
 # -*- coding: utf-8 -*-
 from Acquisition import aq_base
 from Acquisition import aq_inner
@@ -16,10 +17,10 @@ from zope.interface import implementer
 
 @implementer(INavigationBreadcrumbs)
 class PhysicalNavigationBreadcrumbs(BrowserView):
-    """ EEA Physical Navigation Breadcrumbs """
+    """EEA Physical Navigation Breadcrumbs"""
 
     def breadcrumbs(self):
-        """ breadcrumbs """
+        """breadcrumbs"""
         context = aq_inner(self.context)
         request = self.request
         container = utils.parent(context)
@@ -35,12 +36,14 @@ class PhysicalNavigationBreadcrumbs(BrowserView):
         if container is None:
             return (last_crumb,)
 
-        # Replicate Products.CMFPlone.browser.navigaton.RootPhysicalNavigationBreadcrumbs.breadcrumbs()
+        # Replicate Products.CMFPlone.browser.navigation.
+        # RootPhysicalNavigationBreadcrumbs.breadcrumbs()
         # cause it is not registered during tests
         if INavigationRoot.providedBy(context):
             return ()
 
-        view = getMultiAdapter((container, request), name="eea_breadcrumbs_view")
+        view = getMultiAdapter((container, request),
+                               name="eea_breadcrumbs_view")
         base = tuple(view.breadcrumbs())
 
         # Some things want to be hidden from the breadcrumbs

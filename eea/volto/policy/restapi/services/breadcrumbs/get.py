@@ -1,16 +1,17 @@
-""" Breadcrumbs """
-from plone.restapi.services.breadcrumbs.get import Breadcrumbs
+"""Breadcrumbs"""
+
 from zope.component import getMultiAdapter
-from zope.interface import implementer
-from plone.restapi.interfaces import IExpandableElement, IPloneRestapiLayer
-from zope.interface import Interface
 from zope.component import adapter
+from zope.interface import implementer
+from zope.interface import Interface
+from plone.restapi.interfaces import IExpandableElement, IPloneRestapiLayer
+from plone.restapi.services.breadcrumbs.get import Breadcrumbs
 
 
 @implementer(IExpandableElement)
 @adapter(Interface, IPloneRestapiLayer)
 class EEABreadcrumbs(Breadcrumbs):
-    """ EEA Breadcrumbs """
+    """EEA Breadcrumbs"""
 
     def __call__(self, expand=False):
         """ """
@@ -39,5 +40,6 @@ class EEABreadcrumbs(Breadcrumbs):
             items.append(item)
 
         result["breadcrumbs"]["items"] = items
-        result["breadcrumbs"]["root"] = portal_state.navigation_root().absolute_url()
+        result["breadcrumbs"]["root"] = portal_state.navigation_root()\
+            .absolute_url()
         return result
