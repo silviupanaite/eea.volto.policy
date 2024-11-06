@@ -4,4 +4,5 @@
     >
   <include package=".contextnavigation" />
   <include package=".breadcrumbs" />
+  <include package=".actions" />
 </configure>
