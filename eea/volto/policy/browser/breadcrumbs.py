@@ -24,7 +24,7 @@ class PhysicalNavigationBreadcrumbs(BrowserView):
         context = aq_inner(self.context)
         request = self.request
         container = utils.parent(context)
-        name, item_url = get_view_url(context)
+        _name, item_url = get_view_url(context)
         # EEA add portal_type info to breadcrumbs
         last_crumb = {
             "absolute_url": item_url,
