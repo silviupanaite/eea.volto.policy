@@ -243,6 +243,7 @@ class EEANavigationPortletRenderer(original_get.NavigationPortletRenderer):
 @adapter(Interface, IPloneRestapiLayer)
 class EEAContextNavigation:
     """Custom context navigation"""
+
     def __init__(self, context, request):
         self.context = context
         self.request = request
@@ -255,7 +256,6 @@ class EEAContextNavigation:
         }
         if not expand:
             return result
-        print("REQUEST FORM", self.request.form)
         data = eea_extract_data(
             IEEANavigationPortlet,
             self.request.form,
