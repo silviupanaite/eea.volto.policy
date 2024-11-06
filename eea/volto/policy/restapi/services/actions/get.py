@@ -16,7 +16,8 @@ class EEAActions(Actions):
 
     def __call__(self, expand=False):
         """ """
-        result = {"actions": {"@id": f"{self.context.absolute_url()}/@actions"}}
+        result = {"actions": {"@id":
+                              f"{self.context.absolute_url()}/@actions"}}
         if not expand:
             return result
 
