@@ -3,6 +3,12 @@ Changelog
 
 5.6-dev0 - (unreleased)
 ---------------------------
+* Feature: customized actions endpoint to allow passing of props to the
+  actions endpoint
+  [ichim-david - refs #271001]
+* Feature: customized breadcrumbs endpoint to add portal_type info to the
+  items served by the breadcrumbs endpoint
+  [ichim-david - refs #271001]
 
 5.5 - (2024-10-18)
 ---------------------------
