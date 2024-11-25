@@ -1,6 +1,9 @@
 Changelog
 =========
 
+5.8-dev0 - (unreleased)
+---------------------------
+
 5.7 - (2024-11-24)
 ---------------------------
 * Change: Improve svg upgrade step to know which svgs are fixed and not revisit them
