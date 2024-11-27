@@ -1,6 +1,9 @@
 Changelog
 =========
 
+5.9-dev0 - (unreleased)
+---------------------------
+
 5.8 - (2024-11-26)
 ---------------------------
 * Feature: added getObjSize info for File portal_type used to get file size information
