@@ -150,7 +150,6 @@ class EEANavigationPortletRenderer(original_get.NavigationPortletRenderer):
                 state = ""
             else:
                 state = api.content.get_state(root)
-
             res["items"].append(
                 {
                     "@id": root.absolute_url(),
@@ -164,7 +163,7 @@ class EEANavigationPortletRenderer(original_get.NavigationPortletRenderer):
                     "normalized_id": normalized_id,
                     "thumb": "",
                     # set title to side_nav_title if available
-                    "title": getattr(root, "side_nav_title", root_title),
+                    "title": getattr(root, "side_nav_title", "") or root_title,
                     "type": root_type,
                     "review_state": state,
                 }
@@ -185,11 +184,12 @@ class EEANavigationPortletRenderer(original_get.NavigationPortletRenderer):
 
         for node in children:
             brain = node["item"]
+            is_file = node["portal_type"] == "File"
 
             icon = ""
 
             if show_icons:
-                if node["portal_type"] == "File":
+                if is_file:
                     icon = self.getMimeTypeIcon(node)
 
             has_thumb = brain.getIcon
@@ -216,8 +216,9 @@ class EEANavigationPortletRenderer(original_get.NavigationPortletRenderer):
                 "normalized_id": node["normalized_id"],
                 "review_state": node["review_state"] or "",
                 "thumb": thumb,
-                "title": node.get("side_nav_title", node["Title"]),
+                "title": getattr(node, "side_nav_title", "") or node["Title"],
                 "type": node["normalized_portal_type"],
+                "getObjSize": brain.getObjSize if is_file else "",
             }
 
             if node.get("nav_title", False):

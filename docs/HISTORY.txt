@@ -1,6 +1,13 @@
 Changelog
 =========
 
+5.8 - (2024-11-26)
+---------------------------
+* Feature: added getObjSize info for File portal_type used to get file size information
+  [ichim-david - refs #280463]
+* Bug fix: fixed title of the initial navigation item when `side_title_nav` isn't set 
+  [ichim-david - refs #280463]
+
 5.7 - (2024-11-24)
 ---------------------------
 * Change: Improve svg upgrade step to know which svgs are fixed and not revisit them
