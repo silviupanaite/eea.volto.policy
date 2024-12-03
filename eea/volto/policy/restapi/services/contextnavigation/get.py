@@ -64,7 +64,8 @@ def eea_extract_data(_obj_schema, raw_data, prefix):
         if isinstance(field, schema.Tuple):
             value = raw_value.split(',') if ',' in raw_value else raw_value
         else:
-            value = IFromUnicode(field).fromUnicode(raw_value)
+            value = IFromUnicode(field).fromUnicode(raw_value) if \
+                raw_value != 'undefined' else 0
 
         data[name] = value
 
