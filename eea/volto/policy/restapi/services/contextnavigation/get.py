@@ -2,9 +2,11 @@
 
 from zope.component import getUtility
 from zope.component import adapter
+from zope.globalrequest import getRequest
 from zope.schema.interfaces import IFromUnicode
 from zope.interface import implementer
 from zope.interface import Interface
+from Products.CMFCore.interfaces import ISiteRoot
 from Products.CMFPlone.utils import normalizeString
 from plone.app.layout.navigation.root import getNavigationRoot
 from plone.app.dexterity import _
@@ -89,10 +91,23 @@ class EEAContextNavigationQueryBuilder(original_get.QueryBuilder):
             depth = 999
 
         root = original_get.get_root(context, data.root_path)
+        currentFolderOnly = data.currentFolderOnly
         if root is not None:
             rootPath = "/".join(root.getPhysicalPath())
         else:
-            rootPath = getNavigationRoot(context)
+            rootPath = getNavigationRoot(context) if not currentFolderOnly \
+                else "/".join(context.getPhysicalPath())
+
+        # avoid large queries on layout pages where context is site
+        if currentFolderOnly:
+            request = getRequest()
+            # don't query when we add a new page and we use report_navigation
+            is_site = ISiteRoot.providedBy(context)
+            if is_site or 'add?type' in request.get('HTTP_REFERER', '') and \
+                    request.form.get('expand.contextnavigation.variation', '') \
+                == 'report_navigation':
+                topLevel = 1
+                depth = 0
 
         # EEA modification to always use the rootPath for query
         self.query["path"] = {"query": rootPath, "depth": depth,
