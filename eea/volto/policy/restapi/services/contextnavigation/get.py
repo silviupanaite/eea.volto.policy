@@ -173,6 +173,13 @@ class EEANavigationPortletRenderer(original_get.NavigationPortletRenderer):
 
         return res
 
+    def title(self):
+        """ title """
+        # Allow to have empty title without Navigation fallback
+        name = self.data.name
+        # handle bug where empty title is set to undefined from Volto
+        return name if name != "undefined" else self.data.title
+
     def recurse(self, children, level, bottomLevel):
         """Recurse through the navigation tree"""
         res = []
