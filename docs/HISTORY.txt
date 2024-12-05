@@ -1,8 +1,10 @@
 Changelog
 =========
 
-5.9-dev0 - (unreleased)
+6.0 - (2024-12-05)
 ---------------------------
+* Change: Fix plone.app.vocabularies.Users to work with Creators and Contributors Field
+  [avoinea - refs #274362]
 
 5.8 - (2024-11-26)
 ---------------------------

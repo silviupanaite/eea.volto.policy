@@ -103,9 +103,9 @@ class EEAContextNavigationQueryBuilder(original_get.QueryBuilder):
             request = getRequest()
             # don't query when we add a new page and we use report_navigation
             is_site = ISiteRoot.providedBy(context)
-            if is_site or 'add?type' in request.get('HTTP_REFERER', '') and \
-                    request.form.get('expand.contextnavigation.variation', '') \
-                == 'report_navigation':
+            if (is_site or 'add?type' in request.get('HTTP_REFERER', '') and
+                request.form.get('expand.contextnavigation.variation',
+                                 '') == 'report_navigation'):
                 topLevel = 1
                 depth = 0
 
