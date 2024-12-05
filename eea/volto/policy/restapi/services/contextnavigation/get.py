@@ -172,7 +172,7 @@ class EEANavigationPortletRenderer(original_get.NavigationPortletRenderer):
         res["items"].extend(self.createNavTree())
 
         return res
-    
+
     def title(self):
         """ title """
         # Allow to have empty title without Navigation fallback
