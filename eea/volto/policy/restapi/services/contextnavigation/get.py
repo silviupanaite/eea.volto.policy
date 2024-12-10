@@ -107,10 +107,10 @@ class EEAContextNavigationQueryBuilder(original_get.QueryBuilder):
             # don't query when we add a new page and we use report_navigation
             is_site = ISiteRoot.providedBy(context)
             if is_site or 'add?type' in request.get('HTTP_REFERER', '') and \
-                    request.form.get('expand.contextnavigation.variation', '') \
-            == 'report_navigation':
+                    request.form.get('expand.contextnavigation.variation', '')\
+                    == 'report_navigation':
                 self.query = {}
-                return None
+                return
 
         # EEA modification to always use the rootPath for query
         self.query["path"] = {"query": rootPath, "depth": depth,
