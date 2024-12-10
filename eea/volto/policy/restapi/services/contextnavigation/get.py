@@ -10,7 +10,7 @@ from zope.interface import Interface
 from Products.CMFCore.interfaces import ISiteRoot
 from Products.CMFPlone.utils import normalizeString
 from plone.app.layout.navigation.navtree import buildFolderTree
-from plone.base.navigationroot import get_navigation_root
+from plone.app.layout.navigation.root import getNavigationRoot
 from plone.app.dexterity import _
 from plone.restapi.services.contextnavigation import get as original_get
 from plone.restapi.interfaces import IExpandableElement, IPloneRestapiLayer
@@ -98,7 +98,7 @@ class EEAContextNavigationQueryBuilder(original_get.QueryBuilder):
         if root is not None:
             rootPath = "/".join(root.getPhysicalPath())
         else:
-            rootPath = get_navigation_root(context) if not currentFolderOnly \
+            rootPath = getNavigationRoot(context) if not currentFolderOnly \
                 else "/".join(context.getPhysicalPath())
 
         # avoid large queries on layout pages where context is site
