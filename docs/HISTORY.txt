@@ -1,6 +1,9 @@
 Changelog
 =========
 
+6.2-dev0 - (unreleased)
+---------------------------
+
 6.1 - (2024-12-10)
 ---------------------------
 * Fix: large query on context navigation when on layout or add new item.
