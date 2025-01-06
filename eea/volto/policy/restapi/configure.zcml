@@ -10,4 +10,11 @@
     provides="plone.restapi.interfaces.IBlockFieldSerializationTransformer"
     factory=".blocks.RestrictedBlockSerializationTransformer" />
 
+  
+  <subscriber
+    provides="plone.restapi.interfaces.IBlockFieldSerializationTransformer"
+    factory=".blocks.ContextNavigationBlockSerializationTransformer" />
+ 
+
+
 </configure>
