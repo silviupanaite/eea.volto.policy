@@ -10,10 +10,13 @@
     provides="plone.restapi.interfaces.IBlockFieldSerializationTransformer"
     factory=".blocks.RestrictedBlockSerializationTransformer" />
 
-  
   <subscriber
     provides="plone.restapi.interfaces.IBlockFieldSerializationTransformer"
     factory=".blocks.ContextNavigationBlockSerializationTransformer" />
+
+  <subscriber
+    provides="plone.restapi.interfaces.IBlockFieldSerializationTransformer"
+    factory=".blocks.LatestVersionBlockSerializationTransformer" />
  
 
 

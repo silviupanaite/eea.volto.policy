@@ -6,13 +6,13 @@ from plone.restapi.behaviors import IBlocks
 from plone.restapi.interfaces import IBlockFieldSerializationTransformer
 from zope.component import adapter
 from zope.interface import implementer
-from Products.CMFCore.utils import getToolByName
 from zope.publisher.interfaces.browser import IBrowserRequest
 from eea.volto.policy.restapi.services.contextnavigation.get import (
     EEANavigationPortletRenderer,
     eea_extract_data,
     IEEANavigationPortlet,
 )
+from eea.api.versions.browser.relations import EEAVersionsView
 
 
 @implementer(IBlockFieldSerializationTransformer)
@@ -72,5 +72,26 @@ class ContextNavigationBlockSerializationTransformer:
                 "available", True
             )  # or get res[items]?
             value["results"] = is_data_available
+
+        return value
+
+
+@implementer(IBlockFieldSerializationTransformer)
+@adapter(IBlocks, IBrowserRequest)
+class LatestVersionBlockSerializationTransformer:
+    """Latest versions Block serialization"""
+
+    order = 9999
+    block_type = "eea_latest_version"
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def __call__(self, value):
+        if value.get("@type", None) == "eea_latest_version":
+            value["results"] = EEAVersionsView(
+                self.context, self.request
+            ).newer_versions()
 
         return value
