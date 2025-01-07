@@ -1,5 +1,5 @@
+# flake8: noqa: W503
 """ block-related utils """
-
 from urllib.parse import urlparse
 from plone import api
 from plone.restapi.behaviors import IBlocks
