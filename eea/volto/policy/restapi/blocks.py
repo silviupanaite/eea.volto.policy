@@ -54,7 +54,7 @@ class ContextNavigationBlockSerializationTransformer:
         if value.get("variation", None) == "report_navigation":
 
             if (
-                "root_node" in value and 
+                "root_node" in value and
                 isinstance(value["root_node"], list) and
                 len(value["root_node"]) > 0
             ):
