@@ -54,9 +54,9 @@ class ContextNavigationBlockSerializationTransformer:
         if value.get("variation", None) == "report_navigation":
 
             if (
-                "root_node" in value and
-                isinstance(value["root_node"], list) and
-                len(value["root_node"]) > 0
+                "root_node" in value
+                and isinstance(value["root_node"], list)
+                and len(value["root_node"]) > 0
             ):
                 root_nav_item = value["root_node"][0]
                 url = urlparse(root_nav_item.get("@id", ""))
@@ -78,6 +78,30 @@ class ContextNavigationBlockSerializationTransformer:
 
 @implementer(IBlockFieldSerializationTransformer)
 @adapter(IBlocks, IBrowserRequest)
+class AllVersionBlockSerializationTransformer:
+    """All versions Block serialization"""
+
+    order = 9999
+    block_type = "eea_versions"
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def __call__(self, value):
+        if value.get("@type", None) == "eea_versions":
+            all_versions = EEAVersionsView(self.context, self.request)
+            results = (
+                all_versions.newer_versions() or all_versions.older_versions()
+            )
+
+            value["results"] = len(results) > 0
+
+        return value
+
+
+@implementer(IBlockFieldSerializationTransformer)
+@adapter(IBlocks, IBrowserRequest)
 class LatestVersionBlockSerializationTransformer:
     """Latest versions Block serialization"""
 
@@ -90,8 +114,9 @@ class LatestVersionBlockSerializationTransformer:
 
     def __call__(self, value):
         if value.get("@type", None) == "eea_latest_version":
-            value["results"] = EEAVersionsView(
-                self.context, self.request
-            ).newer_versions()
+            all_versions = EEAVersionsView(self.context, self.request)
+            results = all_versions.newer_versions()
+
+            value["results"] = len(results) > 0
 
         return value

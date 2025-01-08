@@ -16,6 +16,10 @@
 
   <subscriber
     provides="plone.restapi.interfaces.IBlockFieldSerializationTransformer"
+    factory=".blocks.AllVersionBlockSerializationTransformer" />
+ 
+ <subscriber
+    provides="plone.restapi.interfaces.IBlockFieldSerializationTransformer"
     factory=".blocks.LatestVersionBlockSerializationTransformer" />
  
 
