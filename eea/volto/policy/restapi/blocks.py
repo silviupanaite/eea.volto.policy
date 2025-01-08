@@ -54,9 +54,9 @@ class ContextNavigationBlockSerializationTransformer:
         if value.get("variation", None) == "report_navigation":
 
             if (
-                "root_node" in value
-                and isinstance(value["root_node"], list)
-                and len(value["root_node"]) > 0
+                "root_node" in value and 
+                isinstance(value["root_node"], list) and
+                len(value["root_node"]) > 0
             ):
                 root_nav_item = value["root_node"][0]
                 url = urlparse(root_nav_item.get("@id", ""))
