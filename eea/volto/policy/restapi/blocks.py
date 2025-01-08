@@ -12,7 +12,10 @@ from eea.volto.policy.restapi.services.contextnavigation.get import (
     eea_extract_data,
     IEEANavigationPortlet,
 )
-from eea.api.versions.browser.relations import EEAVersionsView
+try:
+    from eea.api.versions.browser.relations import EEAVersionsView
+except ImportError:
+    EEAVersionsView = None
 
 
 @implementer(IBlockFieldSerializationTransformer)
@@ -96,7 +99,6 @@ class AllVersionBlockSerializationTransformer:
             )
 
             value["results"] = len(results) > 0
-
         return value
 
 

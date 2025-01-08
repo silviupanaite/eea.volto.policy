@@ -16,11 +16,15 @@
 
   <subscriber
     provides="plone.restapi.interfaces.IBlockFieldSerializationTransformer"
-    factory=".blocks.AllVersionBlockSerializationTransformer" />
+    factory=".blocks.AllVersionBlockSerializationTransformer" 
+    zcml:condition="installed eea.api.versions"
+    />
  
  <subscriber
     provides="plone.restapi.interfaces.IBlockFieldSerializationTransformer"
-    factory=".blocks.LatestVersionBlockSerializationTransformer" />
+    factory=".blocks.LatestVersionBlockSerializationTransformer"
+    zcml:condition="installed eea.api.versions"
+     />
  
 
 

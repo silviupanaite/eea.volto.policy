@@ -50,7 +50,6 @@ setup(
         install_requires=[
         'setuptools',
         "plone.volto",
-        "eea.api.versions"
         # -*- Extra requirements: -*-
     ],
     extras_require={
