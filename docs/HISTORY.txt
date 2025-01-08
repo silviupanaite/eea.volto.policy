@@ -3,6 +3,10 @@ Changelog
 
 6.2-dev0 - (unreleased)
 ---------------------------
+* Feature: add block transformer for contextNavigation
+ [nileshgulia1 refs #282065]
+* Feature: add block transformer for versions
+ [nileshgulia1 refs #282065]
 
 6.1 - (2024-12-10)
 ---------------------------

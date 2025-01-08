@@ -64,12 +64,15 @@ def eea_extract_data(_obj_schema, raw_data, prefix):
     data = original_get.Data({})
     for name in obj_schema_names:
         field = obj_schema[name]
-        raw_value = raw_data.get(prefix + name, field.default)
+        if prefix:
+            raw_value = raw_data.get(prefix + name, field.default)
+        else:  # pragma: no cover
+            raw_value = raw_data.get(name, field.default)
 
         if isinstance(field, schema.Tuple):
-            value = raw_value.split(',') if ',' in raw_value else raw_value
+            value = raw_value.split(",") if "," in raw_value else raw_value
         else:
-            value = IFromUnicode(field).fromUnicode(raw_value)
+            value = IFromUnicode(field).fromUnicode(str(raw_value))
 
         data[name] = value
 
