@@ -3,10 +3,12 @@ Changelog
 
 6.2 - (2025-01-08)
 ---------------------------
+* Fix: Add serializer for slate and html blocks refs
+  [dobri1408 - refs #282435]
 * Feature: add block transformer for contextNavigation
- [nileshgulia1 refs #282065]
+  [nileshgulia1 - refs #282065]
 * Feature: add block transformer for versions
- [nileshgulia1 refs #282065]
+  [nileshgulia1 - refs #282065]
 
 6.1 - (2024-12-10)
 ---------------------------
