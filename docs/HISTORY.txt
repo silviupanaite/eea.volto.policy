@@ -1,6 +1,9 @@
 Changelog
 =========
 
+6.3-dev0 - (unreleased)
+---------------------------
+
 6.2 - (2025-01-08)
 ---------------------------
 * Fix: Add serializer for slate and html blocks refs
