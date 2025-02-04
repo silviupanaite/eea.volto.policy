@@ -3,8 +3,10 @@ Changelog
 
 6.3 - (2025-02-03)
 ---------------------------
-* Change: Fix Serializer HTML - refs #282435
-  [avoinea]
+* Fix: Context Navigation root_path extract from root_node
+  [avoinea - refs #283961]
+* Change: Fix Serializer HTML
+  [dobri1408 - refs #282435]
 
 6.2 - (2025-01-08)
 ---------------------------
@@ -35,7 +37,7 @@ Changelog
 ---------------------------
 * Feature: added getObjSize info for File portal_type used to get file size information
   [ichim-david - refs #280463]
-* Bug fix: fixed title of the initial navigation item when `side_title_nav` isn't set 
+* Bug fix: fixed title of the initial navigation item when `side_title_nav` isn't set
   [ichim-david - refs #280463]
 
 5.7 - (2024-11-24)
@@ -59,7 +61,7 @@ Changelog
 
 5.4 - (2024-10-09)
 ---------------------------
-* Fix: Create a content upgrade script to fix SVGs display 
+* Fix: Create a content upgrade script to fix SVGs display
   [@dobri1408 - refs #276995]
 
 5.3 - (2024-08-23)

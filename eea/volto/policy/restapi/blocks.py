@@ -183,7 +183,7 @@ class ContextNavigationBlockSerializationTransformer:
             ):
                 root_nav_item = value["root_node"][0]
                 url = urlparse(root_nav_item.get("@id", ""))
-                value["root_path"] = url.path if url.scheme else ""
+                value["root_path"] = url.path
 
             data = eea_extract_data(IEEANavigationPortlet, value, prefix=None)
 
