@@ -42,16 +42,21 @@ class HTMLBlockDeserializerBase:
     """
     HTML block Deserializer for the hrefs and src
     """
-    order = 100
+    order = 9999
     block_type = "html"
 
     def __init__(self, context, request):
         self.context = context
         self.request = request
 
+    def _clean_download_image(self, url: str) -> str:
+        """
+        Remove /@@download/image
+        """
+        return url.replace("/@@download/image", "")
+
     def __call__(self, block):
         raw_html = block.get("html", "")
-
         if not raw_html:
             return block
 
@@ -61,24 +66,18 @@ class HTMLBlockDeserializerBase:
         # Resolve all <a> and <img> tags to UIDs
         for tag in soup.find_all(["a", "img"]):
             if tag.name == "a" and tag.has_attr("href"):
+                tag["href"] = self._clean_download_image(tag["href"])
 
                 tag["href"] = path2uid(context=self.context, link=tag["href"])
 
             elif tag.name == "img" and tag.has_attr("src"):
+                tag["src"] = self._clean_download_image(tag["src"])
                 tag["src"] = path2uid(context=self.context, link=tag["src"])
 
         # Serialize the modified HTML back into the block
         block["html"] = str(soup)
-        return block
 
-    def _convert_to_uid(self, url, is_image=False):
-        """
-        Convert relative or absolute URLs into resolve UID links.
-        """
-        uid = path2uid(self.context, url)
-        if uid:
-            return f"/resolveuid/{uid}"
-        return url
+        return block
 
 
 class HTMLBlockSerializerBase:
@@ -101,7 +100,6 @@ class HTMLBlockSerializerBase:
 
         # Parse the HTML using BeautifulSoup
         soup = BeautifulSoup(raw_html, "html.parser")
-
         # Resolve all <a> and <img> tags
         for tag in soup.find_all(["a", "img"]):
             if tag.name == "a" and tag.has_attr("href"):
@@ -185,7 +183,7 @@ class ContextNavigationBlockSerializationTransformer:
             ):
                 root_nav_item = value["root_node"][0]
                 url = urlparse(root_nav_item.get("@id", ""))
-                value["root_path"] = url.path if url.scheme else ""
+                value["root_path"] = url.path
 
             data = eea_extract_data(IEEANavigationPortlet, value, prefix=None)
 
