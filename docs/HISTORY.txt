@@ -1,8 +1,10 @@
 Changelog
 =========
 
-6.4-dev0 - (unreleased)
+6.4 - (2025-02-03)
 ---------------------------
+* Fix: HTML, Slate serializer for resolveuid images
+  [avoinea - refs #282435]
 
 6.3 - (2025-02-03)
 ---------------------------
