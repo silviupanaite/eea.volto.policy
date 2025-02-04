@@ -118,7 +118,7 @@ class HTMLBlockSerializerBase:
         """
         if "/resolveuid/" in url:
             resolved_url = uid_to_url(url)
-            if is_image and resolved_url:
+            if is_image and "/resolveuid/" not in resolved_url:
                 return f"{resolved_url}/@@download/image"
             return resolved_url or url
         return url
@@ -132,9 +132,10 @@ class SlateBlockSerializer(SlateBlockSerializerBase):
     def handle_img(self, child):
         "Serializer for the imgs"
         if child.get("url"):
-            if "resolveuid" in child["url"]:
+            if "resolveuid/" in child["url"]:
                 url = uid_to_url(child["url"])
-                url = "%s/@@download/image" % url
+                if "resolveuid/" not in url:
+                    url = "%s/@@download/image" % url
                 child["url"] = url
 
 
