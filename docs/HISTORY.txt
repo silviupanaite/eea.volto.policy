@@ -1,6 +1,9 @@
 Changelog
 =========
 
+6.4-dev0 - (unreleased)
+---------------------------
+
 6.3 - (2025-02-03)
 ---------------------------
 * Fix: Context Navigation root_path extract from root_node
