@@ -23,6 +23,6 @@ class ControlpanelsGet(PloneControlpanelsGet):
         panel = self.panel_by_name(name)
 
         if not has_controlpanel_permission(self.context, self.request, panel):
-            return
+            return None
 
         return super().reply_panel()

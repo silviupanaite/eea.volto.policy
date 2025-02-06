@@ -20,6 +20,6 @@ class ControlpanelsUpdate(PloneControlpanelsUpdate):
         panel = self.panel_by_name(self.params[0])
 
         if not has_controlpanel_permission(self.context, self.request, panel):
-            return
+            return None
 
         return super().reply()
