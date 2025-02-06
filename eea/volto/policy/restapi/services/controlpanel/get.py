@@ -9,12 +9,16 @@ from eea.volto.policy.restapi.services.controlpanel.utils import (
 
 
 class ControlpanelsGet(PloneControlpanelsGet):
+    """ Controlpanel get service """
+
     def reply(self):
+        """ Reply """
         if self.params:
             return self.reply_panel()
         return super().reply()
 
     def reply_panel(self):
+        """ Reply panel """
         name = self.params[0]
         panel = self.panel_by_name(name)
 

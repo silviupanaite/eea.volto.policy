@@ -9,7 +9,7 @@ from Products.CMFCore.utils import getToolByName
 def get_permission(name):
     """ Get permission by name """
     for _, permission in getUtilitiesFor(IPermission):
-        if permission.id == name or permission.title == name:
+        if name in (permission.id, permission.title):
             return permission
     return None
 

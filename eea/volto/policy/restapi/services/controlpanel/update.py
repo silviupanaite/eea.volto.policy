@@ -11,7 +11,10 @@ from eea.volto.policy.restapi.services.controlpanel.utils import (
 
 
 class ControlpanelsUpdate(PloneControlpanelsUpdate):
+    """" Controlpanel update service """
+
     def reply(self):
+        """ Reply """
         if not self.params:
             raise BadRequest("Missing parameter controlpanelname")
         panel = self.panel_by_name(self.params[0])
