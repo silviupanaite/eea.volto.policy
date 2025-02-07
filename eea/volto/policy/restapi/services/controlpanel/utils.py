@@ -29,6 +29,8 @@ def has_controlpanel_permission(context, request, panel):
 
     for name in panel_config.permissions:
         permission = get_permission(name)
+        if not permission:
+            continue
         has_permission = checkPermission(permission.id, context)
         if permission:
             permissionless = False
