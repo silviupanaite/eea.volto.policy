@@ -1,10 +1,10 @@
 Changelog
 =========
 
-6.5 - (2025-02-06)
+7.0 - (2025-02-06)
 ---------------------------
-* Change: Improve plone.restapi controlpanel to check cp permissions, ref #282173
-  [razvanMiu]
+* Feature: Improve plone.restapi controlpanel to check cp permissions
+  [razvanMiu - ref #282173]
 
 6.4 - (2025-02-03)
 ---------------------------
