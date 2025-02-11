@@ -25,12 +25,9 @@ def has_controlpanel_permission(context, request, panel):
         panel.configlet_category_id, panel.configlet_id
     ))
 
-    import pdb;
-    pdb.set_trace()
-
     permissionless = True
 
-    for name in panel_config.permissions:
+    for name in getattr(panel_config, "permissions", []):
         permission = get_permission(name)
         if not permission:
             continue
@@ -41,7 +38,7 @@ def has_controlpanel_permission(context, request, panel):
             send_unauthorized(context, request)
             return False
 
-    if not panel_config or not panel_config.permissions or permissionless:
+    if not panel_config or permissionless:
         permission = get_permission("plone.app.controlpanel.Overview")
         has_permission = checkPermission(permission.id, context)
         if not permission or not has_permission:
