@@ -6,7 +6,7 @@
       method="GET"
       factory="eea.volto.policy.restapi.services.controlpanel.get.ControlpanelsGet"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      permission="zope2.View"
+      permission="cmf.ModifyPortalContent"
       name="@controlpanels"
       />
 
@@ -14,7 +14,7 @@
       method="PATCH"
       factory="eea.volto.policy.restapi.services.controlpanel.update.ControlpanelsUpdate"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      permission="zope2.View"
+      permission="cmf.ModifyPortalContent"
       name="@controlpanels"
       />
 
