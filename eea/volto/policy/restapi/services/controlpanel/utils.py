@@ -25,6 +25,9 @@ def has_controlpanel_permission(context, request, panel):
         panel.configlet_category_id, panel.configlet_id
     ))
 
+    import pdb;
+    pdb.set_trace()
+
     permissionless = True
 
     for name in panel_config.permissions:
