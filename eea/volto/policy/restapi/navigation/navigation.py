@@ -4,6 +4,7 @@ from urllib.parse import urlparse
 
 from plone.restapi.interfaces import IExpandableElement, IPloneRestapiLayer
 from plone.restapi.services.navigation.get import Navigation as BaseNavigation
+from plone.restapi.serializer.utils import uid_to_url
 from plone.restapi.services.navigation.get import (
     NavigationGet as BaseNavigationGet,
 )
@@ -24,7 +25,7 @@ class Navigation(BaseNavigation):
             entry["path"] = urlparse(brain.getRemoteUrl).path
             pm = getToolByName(self.context, "portal_membership")
             if bool(pm.isAnonymousUser()):
-                entry["@id"] = brain.getRemoteUrl
+                entry["@id"] = uid_to_url(brain.getRemoteUrl)
 
         return entry
 
