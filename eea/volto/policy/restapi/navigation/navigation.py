@@ -2,7 +2,7 @@
 
 from urllib.parse import urlparse
 
-from plone.restapi.interfaces import IExpandableElement, IPloneRestapiLayer
+from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services.navigation.get import Navigation as BaseNavigation
 from plone.restapi.serializer.utils import uid_to_url
 from plone.restapi.services.navigation.get import (
@@ -11,10 +11,11 @@ from plone.restapi.services.navigation.get import (
 from Products.CMFCore.utils import getToolByName
 from zope.component import adapter
 from zope.interface import Interface, implementer
+from eea.volto.policy.interfaces import IEeaVoltoPolicyLayer
 
 
 @implementer(IExpandableElement)
-@adapter(Interface, IPloneRestapiLayer)
+@adapter(Interface, IEeaVoltoPolicyLayer)
 class Navigation(BaseNavigation):
     """Navigation adapter"""
 
