@@ -1,6 +1,15 @@
 Changelog
 =========
 
+7.0 - (2025-02-06)
+---------------------------
+* Feature: Improve plone.restapi controlpanel to check cp permissions
+  [razvanMiu - ref #282173]
+* Fix: Link getRemoteUrl for anonymous users when used as part of global navigation
+  [ichim-david - refs #284346]
+* Fix: navigation layer registration
+  [tiberiuichim]
+
 6.4 - (2025-02-03)
 ---------------------------
 * Fix: HTML, Slate serializer for resolveuid images
