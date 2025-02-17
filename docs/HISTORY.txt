@@ -7,6 +7,8 @@ Changelog
   [razvanMiu - ref #282173]
 * Fix: Link getRemoteUrl for anonymous users when used as part of global navigation
   [ichim-david - refs #284346]
+* Fix: navigation layer registration
+  [tiberiuichim]
 
 6.4 - (2025-02-03)
 ---------------------------
